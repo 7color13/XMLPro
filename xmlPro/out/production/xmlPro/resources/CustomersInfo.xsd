@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+    <xsd:element name="customers">
+
+        <xsd:complexType >
+            <xsd:sequence>
+                <xsd:element name="customer" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="id" type="idData" maxOccurs="1"> </xsd:element>
+                            <xsd:element name="name" type="xsd:string"></xsd:element>
+                            <xsd:element name="address" type="xsd:string"></xsd:element>
+                            <xsd:element name="age" type="ageData"></xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:unique name="uniqueId">
+            <xsd:selector xpath="customer"></xsd:selector>
+            <xsd:field xpath="id"></xsd:field>
+        </xsd:unique>
+    </xsd:element>
+    <xsd:simpleType name="ageData">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minExclusive value="0"></xsd:minExclusive>
+            <xsd:maxInclusive value="150"></xsd:maxInclusive>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="idData">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="#[0-9]{3}"></xsd:pattern>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

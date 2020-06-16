@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<customers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CustomersInfo.xsd">
+  <customer>
+    <id>#001</id>
+    <name>刘锐</name>
+    <address>芜湖</address>
+    <age>45</age>
+  </customer>
+  <customer>
+    <id>#004</id>
+    <name>taylor</name>
+    <address>Us</address>
+    <age>30</age>
+  </customer>
+</customers>
